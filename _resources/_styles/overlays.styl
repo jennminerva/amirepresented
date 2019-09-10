@@ -1,0 +1,296 @@
+.Overlay {
+  height: 100vh;
+  width: 100vw;
+  background: white;
+  position: fixed;
+  overflow: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  transition: all 400ms ease-out;
+  box-shadow: 0px 0px 126px 0px rgba(0,0,0,0.7);
+  opacity: 0;
+  //transform: translateX(100px);
+  display: none;
+}
+@media laptop {
+  .Overlay {
+    width: 50vw;
+    left: 50vw;
+  }
+}
+.Overlay.Active {
+  opacity: 1;
+  //transform: translateX(0px);
+}
+.OverlayContent {
+  margin: unit2 0 0 0;
+}
+@media laptop {
+  .OverlayContent {
+    margin: unit7 0 0 0;
+  }
+}
+@media laptop {
+  .OverlayScrim {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    background: black;
+    height: 100vh;
+    display: none;
+    opacity: 0;
+    transition: all 400ms ease-out;
+  }
+  .OverlayScrim.Active {
+    opacity: .8;
+  }
+}
+
+// OFFICIALS
+.OfficialRoster p {
+  font-size: 1.3rem;
+}
+.OfficialRoster {
+   display: flex;
+   flex-direction: column;
+   margin: unit3 unit3 unit3 unit3;
+   justify-content: flex-start;
+   padding-bottom: unit3;
+   border-bottom: 1px solid black;
+   opacity: 0;
+ }
+@media laptop {
+  .OfficialRoster {
+    flex-direction: row;
+    padding-bottom: 0;
+    margin: unit3 unit6 0 unit8;
+    flex-wrap: wrap;
+  }
+}
+.OfficialSingle {
+  display: flex;
+  flex-direction: row;
+  margin: unit2 0;
+  width: 100%;
+  justify-content: flex-start;
+  //border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+@media tablet {
+  .OfficialSingle {
+    width: 50%;
+  }
+}
+@media laptop {
+  .OfficialSingle {
+    width: 100%;
+    margin: 0 0 unit6 0;
+  }
+}
+// @media desktop {
+//   .OfficialSingle {
+//     width: 50%;
+//   }
+// }
+.OfficialInfo {
+  border-top: 1px solid rgba(0,0,0,1);
+  padding-top: unit2;
+  width: 100%;
+}
+@media desktop {
+  .OfficialInfo {
+    margin-right: unit2;
+  }
+}
+.OfficialPhoto {
+  width: 85%;
+  margin: 0 unit3 0 0;
+  position: relative;
+}
+@media laptop {
+  .OfficialPhoto {
+    width: 65%;
+    margin: 0 unit3 0 0;
+  }
+}
+.OfficialPhoto .Image {
+  filter: grayscale(100%);
+  width: 100%;
+  padding-bottom: 100%;
+  height: 0px;
+  border-radius: 100%;
+  background-size: cover;
+  background-color: black;
+  background-position: top center;
+  display: none;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+}
+.OfficialPhoto .Backdrop {
+  width: 100%;
+  padding-bottom: 100%;
+  height: 0px;
+  border-radius: 100%;
+  background-color: black;
+  position: relative;
+  z-index: 0;
+}
+#ImgLoader {
+  display: none;
+  opacity: 0;
+}
+.OfficialOffice {
+  margin: 0;
+}
+.OfficialName {
+  word-wrap: break-word;
+  // font-family: 'CircularStdBold', sans-serif;
+	// font-size: 2rem;
+
+	font-size: 1.3rem;
+}
+@media laptop {
+  .OfficialName {
+    font-size: 2.6rem;
+    font-family: 'Iowanoldstyle', serif;
+  }
+}
+.OfficialDivider {
+  width: calc(100% - unit2);
+  border-bottom: 1px solid #ccc;
+  margin: unit3 0;
+  height: 0px;
+}
+@media laptop {
+  .OfficialDivider {
+    display: none;
+    margin: unit8;
+  }
+}
+
+// CITY AND STATE HEADING
+
+.OverlayCity{
+  position: relative;
+  width: 90%;
+  margin: unit2 unit3 unit3 unit3;
+  opacity: 0;
+}
+@media laptop {
+  .OverlayCity {
+    margin: unit8;
+  }
+}
+.OverlayClose {
+  position: absolute;
+  top: unit0;
+  right: unit0;
+  height: unit6;
+  width: unit6;
+  background: url(_img/close.svg) no-repeat;
+  background-size: 16px;
+  background-position: center center;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  text-indent: -99999px;
+  z-index: 9999;
+  cursor: pointer;
+}
+.MissingSomeone {
+  border-bottom: 1px solid #000;
+  width: 13.4rem;
+  font-size: 1.3rem;
+  margin: unti7 0 0 unit3;
+  position: relative;
+  top: 3rem;
+}
+
+// SHARE THIS MODULE
+
+.ShareContainer {
+  margin: 0 unit3;
+  opacity: 0;
+}
+@media laptop {
+  .ShareContainer {
+    margin: unit8;
+  }
+}
+.ShareModule {
+  border: 1px solid #FF3700;
+  border-radius: 5px;
+  width: 100%;
+  margin: 2rem 0 0 0;
+  overflow: auto;
+}
+@media laptop {
+  .ShareModule {
+    margin: 2rem 0 0 0;
+    max-width: 34rem;
+  }
+}
+// overrides mobile safari input styling
+input {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+.InputShare {
+  border-radius: 0;
+  border: none;
+  height: 2.9rem;
+  width: 69%;
+  margin: 0 0 0 .5rem;
+  background: transparent;
+  font-size: 1.4rem;
+  color: #888;
+  webkit-appearance: none;
+  float: left;
+}
+.BtnShare {
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  border-left: 1px solid #FF3700;
+  font-size: 1.4rem;
+  color: #FF3700;
+  padding: 0 1rem;
+  height: 3rem;
+  float: right;
+}
+.BtnShare:hover {
+  background: #FF3700;
+  color: white;
+}
+.OverlaySiteCredit {
+  margin: unit3;
+  margin-bottom: 30%;
+  font-size: 1.3rem;
+  line-height: 250%;
+  opacity: 0;
+}
+@media laptop {
+  .OverlaySiteCredit {
+    margin: unit8;
+    line-height: 140%;
+  }
+}
+.OverlayImgGitHub {
+  height: 18px;
+  width: 18px;
+  text-align: center;
+  background-position: center center;
+  position: relative;
+  top: 5px;
+  left: 2rem;
+}
+@media laptop {
+  .OverlayImgGitHub {
+    margin: 0 0 0 29rem;
+  }
+}
